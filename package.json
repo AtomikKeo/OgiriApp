@@ -1,0 +1,19 @@
+{
+  "name": "ogiriapp",
+  "version": "1.0.0",
+  "description": "play ogiri frequently",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AtomikKeo/OgiriApp.git"
+  },
+  "author": "AtomikKeo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AtomikKeo/OgiriApp/issues"
+  },
+  "homepage": "https://github.com/AtomikKeo/OgiriApp#readme"
+}
