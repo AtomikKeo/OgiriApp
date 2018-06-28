@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
+//ミドルウェアの使用
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json())
 
