@@ -2,7 +2,7 @@ function render(todos){
     $(".answers").children().not(".template").remove();
     const template = $(".answers").children(".template");
 
-    answers.forEach((answer) => {
+    template.forEach((answer) => {
         const node = template.clone(true).show().removeClass("template");
 
         node.find(".text").text(answer.text);
