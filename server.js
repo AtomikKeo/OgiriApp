@@ -8,39 +8,50 @@ app.use(bodyParser.json())
 
 mongoose.connect('mongodb://localhost/mydb');
 
-const Todo = mongoose.model('Todo', {
-  text : String
+const Answer = mongoose.model('Answer', {
+  name : String,
+  text : String,
+  votes : int,
+  date : {type : Date, default : Date.now}
 });
 
-app.get('/api/todos', (req, res) =>{
+const Problem = mongoose.model('Problem', {
+  name : String,
+  text : String,
+  date : {type : Date, default : Date.now}
+})
+
+app.get('/api/answers', (req, res) =>{
   Todo.find()
-      .then((todos) => {
-        res.json(todos);
+      .then((answers) => {
+        res.json(answers);
       })
       .catch((err) => {
         res.send(err);
       })
 });
 
-app.post('/api/todos', (req, res) => {
-  const todo = req.body;
+app.post('/api/answers', (req, res) => {
+  const answer = req.body;
   Todo.create({
-        text : todo.text,
+        name : answer.name,
+        text : answer.text,
+        date : new Date
       })
-      .then((todo) => {
-        res.json(todo);
+      .then((answer) => {
+        res.json(answer);
       })
       .catch((err) => {
         res.send(err);
       });
 });
 
-app.delete('/api/todos/:todo_id', (req, res) => {
+app.delete('/api/todos/:answer_id', (req, res) => {
   Todo.remove({
-        _id : req.params.todo_id
+        _id : req.params.answer_id
       })
-      .then((todo) => {
-        res.send(todo);
+      .then((answer) => {
+        res.send(answer);
       })
       .catch((err) => {
         res.send(err);
