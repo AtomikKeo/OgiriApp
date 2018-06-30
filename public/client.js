@@ -39,7 +39,7 @@ function createTodo(){
 function createAnswer(){
     const name = $(".new-name-text").val();
     const text = $(".new-answer-text").val();
-    ferch('/api/answers', {
+    fetch('/api/answers', {
         method:"POST",
         headers: {
             'Content-Type': 'application/json',
