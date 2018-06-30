@@ -17,8 +17,8 @@ function getAnswers(){
     fetch('/api/answers')
         .then((data) => data.json())
         .then((json) => {
-            const todos = json;
-            render(todos);
+            const answers = json;
+            render(answers);
         });
 }
 

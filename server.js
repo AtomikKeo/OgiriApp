@@ -22,7 +22,7 @@ const Problem = mongoose.model('Problem', {
 })
 
 app.get('/api/answers', (req, res) =>{
-  Todo.find()
+   Answer.find()
       .then((answers) => {
         res.json(answers);
       })
@@ -33,7 +33,7 @@ app.get('/api/answers', (req, res) =>{
 
 app.post('/api/answers', (req, res) => {
   const answer = req.body;
-  Todo.create({
+  Answer.create({
         name : answer.name,
         text : answer.text,
         date : new Date
