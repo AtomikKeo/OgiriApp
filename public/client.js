@@ -1,8 +1,8 @@
-function render(todos){
+function render(answers){
     $(".answers").children().not(".template").remove();
     const template = $(".answers").children(".template");
 
-    template.forEach((answer) => {
+    answers.forEach((answer) => {
         const node = template.clone(true).show().removeClass("template");
 
         node.find(".text").text(answer.text);
