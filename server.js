@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost/mydb');
 const Answer = mongoose.model('Answer', {
   name : String,
   text : String,
-  votes : int,
+  votes : Number,
   date : {type : Date, default : Date.now}
 });
 
